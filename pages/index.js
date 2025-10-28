@@ -78,7 +78,7 @@ export default function HomePage() {
 
   return (
     <div style={{ padding: 24 }}>
-      <h1 style={{ fontSize: 24, fontWeight: "bold", marginBottom: 16 }}>
+      <h1 style={{ fontSize: 34, fontWeight: "bold", marginBottom: 16, textAlign: "center"}}>
         Student List
       </h1>
 
@@ -138,7 +138,7 @@ export default function HomePage() {
 
           <Form.Item>
             {contextHolder}
-            <Button type="primary" htmlType="submit" onClick = {loadings} block >
+            <Button type="primary" htmlType="submit" onClick = {loadings} >
               Submit
             </Button>
           </Form.Item>
