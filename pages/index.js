@@ -10,6 +10,18 @@ export default function HomePage() {
 
    const [messageApi, contextHolder] = message.useMessage();
 
+    const loadings = () => {
+    messageApi
+       .open({
+        type: 'loading',
+        content: 'Action in progress..',
+        duration: 2.5,
+      })
+      .then(() => message.success('Loading finished', 2.5))
+      .then(() => message.info('Loading finished', 2.5));
+  };
+ 
+
 
   const API_URL = "/api/students"; 
   const fetchStudents = async () => {
@@ -126,7 +138,7 @@ export default function HomePage() {
 
           <Form.Item>
             {contextHolder}
-            <Button type="primary" htmlType="submit" block >
+            <Button type="primary" htmlType="submit" onClick = {loadings} block >
               Submit
             </Button>
           </Form.Item>
